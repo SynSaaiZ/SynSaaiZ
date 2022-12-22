@@ -1,0 +1,120 @@
+   import random 
+
+def chart_hangman(incorrect):
+    if incorrect==0: 
+      
+         print("| - - - -     ")
+         print("|             ")
+         print("|             ")
+         print("|             ")
+         print("|             ")
+         print("|             ")
+         print("|             ")
+   
+    elif incorrect==1: 
+        
+          print("| - - - -     ")
+          print("|       |     ")
+          print("|             ")
+          print("|             ")
+          print("|             ")
+          print("|             ")
+          print("|             ")
+    elif incorrect==2: 
+        
+          print("| - - - -     ")
+          print("|       |     ")
+          print("|       |     ")
+          print("|             ")
+          print("|             ")
+          print("|             ")
+          print("|             ")
+    elif incorrect==3: 
+      
+        print("| - - - -     ")
+        print("|       |    ")
+        print("|       |    ")
+        print("|       0     ")
+        print("|             ")
+        print("|             ")
+        print("|             ")
+    elif incorrect==4: 
+      
+        print("| - - - -     ")
+        print("|      |      ")
+        print("|      |      ")
+        print("|      0      ")
+        print("|      |      ")
+        print("|             ")
+        print("|             ")
+    elif incorrect==5: 
+        
+        print("| - - - -     ")
+        print("|       |     ")
+        print("|       |     ")
+        print("|       0     ")
+        print("|      |      ")
+        print("|      |      ")
+        print("|             ")
+    elif incorrect==6: 
+        
+       print("| - - - -     ")
+       print("|       |     ")
+       print("|       |     ")
+       print("|       0     ")
+       print("|    /  |     ")
+       print("|       |    ")  
+       print("|             ")
+    elif incorrect==7: 
+         
+           print("| - - - -     ")
+           print("|       |     ")
+           print("|       |     ")
+           print("|       0     ")
+           print("|    /  | \   ")
+           print("|       |     ")
+           print("|             ")
+    elif incorrect==8: 
+          
+          print("| - - - -     ")
+          print("|       |     ")
+          print("|       |     ")
+          print("|       0     ")
+          print("|    /  | \   ")
+          print("|       |     ")
+          print("|    /        ")
+    elif incorrect==9:
+          
+          print("| - - - -     ")
+          print("|       |     ")
+          print("|       |     ")
+          print("|       0     ")
+          print("|    /  | \   ")
+          print("|       |     ")
+          print("|    /    \   ") 
+          
+def play_hangman():
+    words = ['man', 'bent']
+    word = random.choice(words)
+    b = list(word)
+    incorrect = 0
+    correct_guesses = []
+    
+    while incorrect < 9:
+        chart_hangman(incorrect)
+        a = input("please enter one letter: ")
+        
+        if a in b:
+            correct_guesses.append(a)
+        else:
+            incorrect =incorrect+1
+        
+        if incorrect == 9:
+            print("lose")
+            break
+        
+        if len(correct_guesses) == len(b):
+            print("win")
+            break
+    
+play_hangman() 
